@@ -31,7 +31,7 @@ class Organizer:
         print("Moving all the files into the respective directory")
         with os.scandir() as it:
             for entry in it:
-                if entry.is_file():
+                if entry.is_file() and not entry.name.startswith('.'):
                     filename, ext = path.splitext(entry)
                     print('Moving %s with extension %s'%(filename, ext) )
                     for k,v in self.directory_association.items():
