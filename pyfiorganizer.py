@@ -41,9 +41,8 @@ class Organizer:
                             break
                     else:
                         shutil.move(entry.name, 'misc')
-                        break
-                        
-
+                        continue
+                   
 
 if __name__=='__main__':
     directory_name = sys.argv[1]
