@@ -33,15 +33,17 @@ class Organizer:
             for entry in it:
                 if entry.is_file():
                     filename, ext = path.splitext(entry)
-                    print('Moving %s with extensinon %s'%(filename, ext) )
+                    print('Moving %s with extension %s'%(filename, ext) )
                     for k,v in self.directory_association.items():
                         if ext.replace('.','') in v:
                             print(ext, v, entry.name)
                             shutil.move(entry.name, k)
-                        else:
-                            shutil.move(entry.name, 'misc')
                             break
+                    else:
+                        shutil.move(entry.name, 'misc')
+                        break
                         
+
 
 if __name__=='__main__':
     directory_name = sys.argv[1]
