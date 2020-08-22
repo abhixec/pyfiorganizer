@@ -38,12 +38,10 @@ class Organizer:
                         if ext.replace('.','') in v:
                             print(ext, v, entry.name)
                             shutil.move(entry.name, k)
-                            break
                         else:
                             shutil.move(entry.name, 'misc')
                             break
                         
-
 
 if __name__=='__main__':
     directory_name = sys.argv[1]
